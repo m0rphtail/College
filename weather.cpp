@@ -104,6 +104,18 @@ c:
 				}
 				else{}
 			}
+			else if(month==4 || month==6 || month==9 || month==11)
+			{
+d:
+				cout<<"\nEnter the day:";
+				cin>>day;
+				if(day==0 || day>=31)
+				{
+					cout<<"Invalid day.\nEnter again\n";
+					goto d;
+				}
+				else{}
+			}
 			else
 			{
 b:
