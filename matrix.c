@@ -1,67 +1,3 @@
-/*#include<stdio.h>
-int main()
-{
-  int r1,c1,r2,c2,i,j;
-  int m1[10][10];
-  int m2[10][10];
-  int m3[10][10];
-   printf("Enter the number of rows and columns:");
-   scanf("%d %d",&r1,&c1);
-   printf("Enter the numbers of first matrix:\n");
-  for(i=0;i<r1;i++)
-	{
-		for(j=0;j<c1;j++)
-		{
-			scanf("%d",&m1[i][j]);
-		}
-	}
-   printf("The first matrix is:\n");
-  for(i=0;i<r1;i++)
-	{
-		for(j=0;j<c1;j++)
-			{
-				printf("%d ",m1[i][j]);
-			}
-		printf("\n");
-	}
-   printf("Enter the number of rows and columns:");
-   scanf("%d %d",&r2,&c2);
-   printf("Enter the numbers of second matrix:\n");
-  for(i=0;i<r2;i++)
-	{
-		for(j=0;j<c2;j++)
-			{
-				scanf("%d",&m2[i][j]);
-			}
-	}
-   printf("The second matrix is:\n");
-  for(i=0;i<r1;i++)
-	{
-		for(j=0;j<c1;j++)
-			{	
-				printf("%d ",m2[i][j]);
-			}
-		printf("\n");
-	}
-  if(r1==r2 && c1==c2)
-	{
-		for(i=0;i<r1;i++)
-			{
-				for(j=0;j<c1;j++)
-				m3[i][j]=m1[i][j]+m2[i][j];
-				printf("The addition matrix is:\n");
-			}
-		for(i=0;i<r2;i++)
-		{
-			printf("\n");
-			for(j=0;j<c2;j++)
-			printf("%d",m3[i][j]);
-		}
-	}
-  else
-   printf("Addition can't be performed");
-  return 0;
-}*/
 #include<stdio.h>
 
 void readMatrix(int a[][10], int rowSize, int colSize);
@@ -106,6 +42,11 @@ int main()
     while(rowB<=0 || colB<=0);
     
 	readMatrix(matrixB, rowB, colB);
+
+	printf("\n\n Matrix A:");
+	writeMatrix(matrixA, rowA, colA);
+	printf("\n\n Matrix B:");
+	writeMatrix(matrixB, rowB, colA);
 	
 	while(repeat=='y' || repeat=='Y')
 	{
