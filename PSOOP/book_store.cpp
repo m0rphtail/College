@@ -10,18 +10,27 @@ v. Record number of successful/unsuccessful transactions (use static data member
 Use new operator in constructors to allocate memory space required.
 */
 
+
+//---------------------------------------------------------------------
+
+//                    WORK IN PROGRESS !!!
+
+//---------------------------------------------------------------------
+
+
 #include<iostream>
 using namespace std;
 
 class book
 {
-	int stock;
+	int id,stock;
 	float price;
 	char title[100],author[10],publisher[10];
 	public:
 	book();
 	void getData();
 	void display();
+	void inventory(book *b);
 };
 
 book::book(){}
@@ -34,10 +43,10 @@ void book::getData()
 	cin.get(author,10);
 	cout<<"Enter the publisher: ";
 	cin.get(publisher,10);
-	cin<<"Enter the price: ";
-	cin<<price;
+	cout<<"Enter the price: ";
+	cin>>price;
 	cout<<"Enter the stock: ";
-	cin<<stock;
+	cin>>stock;
 }
 
 void book::display()
@@ -49,10 +58,18 @@ void book::display()
 	cout<<"\t"<<stock;
 }
 
+/*void book::inventory(book b[100])
+{
+*/
+
 int main()
 {
-	book b;
-	b.getData();
-	b.display();
+	int i=0;
+	book b[100];
+	for(i=0;i<3;i++){
+	b[i].getData();}
+	cout<<"\n";
+	for(i=0;i<3;i++){
+	b[i].display();}
     return 0;
 }
