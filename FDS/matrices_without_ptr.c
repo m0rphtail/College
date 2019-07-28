@@ -42,11 +42,6 @@ int main()
     while(rowB<=0 || colB<=0);
     
 	readMatrix(matrixB, rowB, colB);
-
-	printf("\n\n Matrix A:");
-	writeMatrix(matrixA, rowA, colA);
-	printf("\n\n Matrix B:");
-	writeMatrix(matrixB, rowB, colA);
 	
 	while(repeat=='y' || repeat=='Y')
 	{
@@ -243,4 +238,3 @@ void transposeMatrix(int a[][10], int rowA, int colA, int c[][10])
 		}
 	}
 }
-
