@@ -2,18 +2,18 @@
 
 using namespace std;
 
-class complex
+class complex 	//class definition of complex number
 {
 	float real;
 	float imaginary;
 	
-	public:
-	complex()
+	public:		
+	complex()	//initializing a constructor named complex
 	{
 		real=0;
 		imaginary=0;
 	}
-	complex(float a, float b)
+	complex(float a, float b)	//parameterized constuctor
 	{
 		real=a;
 		imaginary=b;
@@ -21,10 +21,10 @@ class complex
     
 	void putData(complex &number);
 	
-	complex friend operator + (complex a, complex b);
-	complex friend operator - (complex a, complex b);
+	complex friend operator + (complex a, complex b);	//prototyping a friend function
+	complex friend operator - (complex a, complex b);	//prototyping a friend function
 	
-	complex operator * (complex &number)
+	complex operator * (complex &number)	
 	{
 		complex product;
 		product.real = (real*number.real) - (imaginary*number.imaginary);
@@ -47,9 +47,9 @@ int main()
 	complex answer;
 	int choice;
 	float Re, Im;
-	char repeat='y';
+	char repeat='y';	//initializing value of repeat to 'y', as initially it is y, the while loop will run once
 	
-	while(repeat=='y' || repeat=='Y')
+	while(repeat=='y' || repeat=='Y')	//condition to check to continue program
 	{
 		cout << "First number\nEnter real part: ";
 		cin >> Re;
