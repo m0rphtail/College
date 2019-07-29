@@ -22,12 +22,13 @@ class marks : public student
 
 void student :: getData()
 {
+	cin.ignore();
 	cout<<"\nEnter roll no: ";
 	cin>>roll_no;
 	cout<<"\nEnter name: ";
-	cin.get(name,50);
+	cin>>name;
 	cout<<"\nEnter branch: ";
-	cin.get(branch,50);
+	cin>>branch;
 }
 
 void student :: display()
@@ -43,7 +44,7 @@ void marks :: getData1()
 	cout<<"\nEnter marks: ";
 	cin>>marks;
 	cout<<"\nEnter the grade: ";
-	cin.get(grade,5);
+	cin>>grade;
 }
 
 void marks :: display1()
