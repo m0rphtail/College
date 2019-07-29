@@ -24,18 +24,18 @@ class complex 	//class definition of complex number
 	complex friend operator + (complex a, complex b);	//prototyping a friend function
 	complex friend operator - (complex a, complex b);	//prototyping a friend function
 	
-	complex operator * (complex &number)	
+	complex operator * (complex &number)		//using a copy constructor
 	{
-		complex product;
-		product.real = (real*number.real) - (imaginary*number.imaginary);
+		complex product;			//initializing object
+		product.real = (real*number.real) - (imaginary*number.imaginary);	//calculating multiplication
 		product.imaginary = (real*number.imaginary) + (number.real*imaginary);
 		return product;
 	}
 	
-	complex operator / (complex &number)
+	complex operator / (complex &number)		//using copy constuctor
 	{
-		complex division;
-        float mod=(number.real*number.real + number.imaginary*number.imaginary);
+		complex division;			//initializing object
+        float mod=(number.real*number.real + number.imaginary*number.imaginary);	//calculating division
         division.real = ((real*number.real) + (imaginary*number.imaginary))/(mod);
         division.imaginary = ((imaginary*number.real) - (real*number.imaginary))/(mod);
 		return division;
@@ -52,10 +52,10 @@ int main()
 	while(repeat=='y' || repeat=='Y')	//condition to check to continue program
 	{
 		cout << "First number\nEnter real part: ";
-		cin >> Re;
-		cout << "Enter imaginary part: ";
-		cin >> Im;
-		complex number1(Re, Im);
+		cin >> Re;					
+		cout << "Enter imaginary part: ";	
+		cin >> Im;	
+		complex number1(Re, Im);				//inputing the numbers
 		
 		cout << "\nSecond number\nEnter real part: ";
 		cin >> Re;
@@ -63,7 +63,7 @@ int main()
 		cin >> Im;
 		complex number2(Re, Im);
 		
-		cout << "\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\nSelect the operation: ";
+		cout << "\n1. Add\n2. Subtract\n3. Multiply\n4. Divide\nSelect the operation: ";	//menu
 		cin >> choice;
 		switch(choice)
 		{
@@ -104,7 +104,7 @@ int main()
 	return 0;
 }
 
-void complex::putData(complex &number)
+void complex::putData(complex &number)		//function to display the answer in correct format
 {
 	if(number.imaginary>=0)
 		cout << "\n" << real << "+" << imaginary << "i\n";
@@ -112,17 +112,17 @@ void complex::putData(complex &number)
 		cout << "\n" << real << imaginary << "i\n";
 }
 
-complex operator + (complex a, complex b)
+complex operator + (complex a, complex b) 	//calculating addition
 {
-	complex sum;
+	complex sum;		//initializing object
 	sum.real = a.real + b.real;
 	sum.imaginary = a.imaginary + b.imaginary;
 	return sum;
 }
 
-complex operator - (complex a, complex b)
+complex operator - (complex a, complex b)	//calculating subtraction
 {
-	complex diff;
+	complex diff;		//initializing object
 	diff.real = a.real - b.real;
 	diff.imaginary = a.imaginary - b.imaginary;
 	return diff;

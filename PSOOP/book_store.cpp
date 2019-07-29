@@ -24,9 +24,9 @@ Use new operator in constructors to allocate memory space required.
 
 using namespace std;
 
-class book
+class book		//defining class 
 {
-	char *author,*title,*publisher;
+	char *author,*title,*publisher; 	//setting data members as pointers
 	float *price;
 	int * stock;
 	public:
@@ -45,9 +45,9 @@ class book
 	void buyBook();
 };
 
-void book :: feedData()
+void book :: feedData()		//function to get all the data
 {
-	cin.ignore();
+	cin.ignore();		//used cin.ignore(), as I have used getline funtion, so it is convinent for the user to input a string with spaces, and does not crash the program
 	cout<<"\nEnter title: ";
 	cin.getline(title,50);
 	cout<<"\nEnter author: ";
@@ -61,12 +61,12 @@ void book :: feedData()
 	cout<<"\n\n";
 }
 
-void book :: editData()
+void book :: editData()		//function to edit the data
 {
-	feedData();	
+	feedData();		//it is basically the feedData function called inside it
 }
 
-void book :: showData()
+void book :: showData()		//function to display all the data of the book
 {
 	cout<<"\nTitle: "<<title;
 	cout<<"\nAuthor: "<<author;
@@ -75,19 +75,19 @@ void book :: showData()
 	cout<<"\nStock: "<<*stock;
 }
 
-int book :: search(char tbuy[50],char abuy[50])
+int book :: search(char tbuy[50],char abuy[50]) 	//function to search if a book and the author exists in stock or not 
 {
-	if(strcmp(tbuy,title)==0 && strcmp(abuy,author)==0)
-		return 1;
+	if(strcmp(tbuy,title)==0 && strcmp(abuy,author)==0) 	//this funtion compares the title and the author string with help of strcmp funtion
+		return 1;					//and if a book is found returns value 1, or else 0
 	else return 0;
 }
 
-void book :: buyBook()
+void book :: buyBook()		//function to buy book
 {
 	int count;
 	cout<<"\nEnter the number of books to buy: ";
-	cin>>count;
-	if(count<=*stock)
+	cin>>count;				//this function first checks if the stock of the books are sufficient
+	if(count<=*stock)			//if yes, then finds out the total cost of the books to be bought
 	{
 		*stock+*stock-count;
 		cout<<"\nBooks bought successfully.";
@@ -99,13 +99,13 @@ void book :: buyBook()
 
 int main()
 {
-	book *B[100];
+	book *B[100];		//objects initialized as array
 	int i=0,r,t,choice;
 	char titleBuy[50],authorBuy[50];
 	while(1)
 	{
 		cout<<"\n\n\tMENU";
-		cout<<"\n1. Entry of new book.\n2. Buy book.\n3. Search for book.\n4. Edit details of book.\n5. Exit\nEnter your choice: ";
+		cout<<"\n1. Entry of new book.\n2. Buy book.\n3. Search for book.\n4. Edit details of book.\n5. Exit\nEnter your choice: "; 	//menu
 		cin>>choice;
 		
 		switch(choice)
@@ -123,7 +123,7 @@ int main()
 
 				for(t=0;t<i;t++)
 				{
-					if(B[t]->search(titleBuy,authorBuy))
+					if(B[t]->search(titleBuy,authorBuy))	//first checks if the book exists, then buys it
 					{
 						B[t]->buyBook();
 						break;
@@ -160,7 +160,7 @@ int main()
 
 				for(t=0;t<i;t++)
 				{
-					if(B[t]->search(titleBuy,authorBuy))
+					if(B[t]->search(titleBuy,authorBuy))	//first checks if the book exists, then edits it
 					{
 						cout<<"\nBook found";
 						B[t]->editData();
