@@ -8,7 +8,7 @@ void saddle(int[][100],int,int);
 int main()
 {
  int a[100][100],b[100][100];
- int i=0,j=0,r1,c1,r2,c2,ch;
+ int i=0,j=0,r1,r2,c1,c2,ch;
 a:
  printf("\nEnter number of row:");
  scanf("%d",&r1);
@@ -44,8 +44,7 @@ else{}
     printf("\t%d",a[i][j]);
     }
     printf("\n");
- } 
- 
+ }
  c:
   printf("\nEnter number of row:");
  scanf("%d",&r2);
@@ -83,8 +82,7 @@ goto d;
     printf("\t%d",b[i][j]);
     }
     printf("\n");
- }   
- 
+ }    
  do{
 printf("\n1.Addition of matrix\n2.Subtaction of matrix\n3.Multiplication\n4.Transpose\n5.Saddle point\n6.Exit\n");
 	printf("\nEnter your choice : ");
@@ -256,7 +254,7 @@ for(i=0;i<r1;i++)
         if(n1==n)
           {
            printf("\nThe saddle point is found!!");
-           printf("\nThe saddle point is:%d",n);
+           printf("\nThe saddle point is:%d at row %d and column %d\n\n",n,i+1,k+1);
           
          break;
          

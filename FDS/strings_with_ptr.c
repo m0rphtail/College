@@ -1,208 +1,211 @@
 #include<stdio.h>
 #include<stdlib.h>
-
-char * readString();
-int stringLength(char *string);
-void stringCopy(char *string1, char *string2);
-void stringReverse(char *string);
-int stringPalindrome(char *string);
-void stringConcatenate(char *string1, char *string2);
-
+int len(char*s);
+void pallin(char*s);
+void cmp(char*s,char*p);
+void copy(char*s);
+void reverse(char*s,char*p);
+void subs(char*s,char*p);
 int main()
-{
-	char *stringA, *stringB, *stringC;
-	int choice, length, check;
-	char repeat='y';
-	
-	stringA=readString();
-	stringB=readString();
-	
-	while(repeat=='y' || repeat=='Y')
-	{
-		printf("\n1. Length\n2. Palindrome\n3. Comparison\n4. Copy\n5. Reverse\n6. Substring\n7. Concatenate");
-		printf("\nSelect the operation: ");
-		scanf("%d", &choice);
-		
-		switch(choice)
-		{
-			case 1:
-				{
-					length=stringLength(stringA);
-					printf("Length of the string is %d", length);
-					break;
-				}
-			case 2:
-				{
-					check=stringPalindrome(stringA);
-					if(check==0)
-					{
-						printf("String is not a palindrome!");
-					}
-					else
-					{
-						printf("String is a palindrome!");
-					}
-					break;
-				}
-			case 3:
-				{
-					/*printf("\nEnter another string to compare: ");
-					scanf("%s", stringB);
-					check=stringCompare(stringA, stringB);
-					if(check==0)
-					{
-						printf("Strings are same!");
-					}
-					else if(check<0)
-					{
-						printf("String 2 is greater than string 1!");
-					}
-					else
-					{
-						printf("String 1 is greater than string 2!");
-					}*/
-					break;
-				}
-			case 4:
-				{
-					stringCopy(stringB, stringA);
-					printf("%s is copied in another string!", stringB);
-					break;
-				}
-			case 5:
-				{
-					stringReverse(stringA);
-					break;
-				}
-			case 6:
-				{
-					/*printf("\nEnter another string to search: ");
-					scanf("%s", stringB);
-					if(stringLength(stringB)<stringLength(stringA))
-					{
-						check=substring(stringA, stringB);
-						if(check==0)
-						{
-							printf("Entered string does not occur in %s", stringA);
-						}
-						else
-						{
-							printf("Entered string occurs %d times in %s", check, stringA);
-						}
-					}
-					else
-					{
-						printf("Invalid string!");
-					}*/
-					break;
-				}
-			case 7:
-				{
-					//stringB=readString();
-					stringC=(char *) malloc(sizeof(char)*(stringLength(stringA)+stringLength(stringB))+1);
-					stringCopy(stringC, stringA);
-					stringConcatenate(stringC, stringB);
-					break;
-				}
-			default:
-				{
-					printf("Incorrect selection! Enter a number between 1-6\n");
-					break;
-				}
-		}
-		
-		printf("\nDo you want to perform another operation? (y/n)");
-		scanf(" %c", &repeat);
-	}
-	
-	return 0;
-}
+ {
+    char *s,*p;
+    s=(char*)malloc(sizeof(char)*10);
+    p=(char*)malloc(sizeof(char)*10);
+    int l,m,n=0;
+    printf("\nEnter the 1st string: ");
+    scanf("%s",s);
+    printf("\nThe 1st string is:%s  ",s);
+   
+   l = len(s);
+   printf("\nLength of string is: %d",l);
+   pallin(s);
+   
+    printf("\nEnter the 2nd string: ");
+    scanf("%s",p);
+    printf("\nThe 2nd string is:%s  ",p);
+    m = len(p);
+    printf("\nLength of string is: %d",m);
+    pallin(p);
 
-char * readString()
-{
-	int length=0;
-	char temp[50], *string;
-	printf("Enter a string: ");
-	scanf(" %[^\n]", temp);
-	string=(char *) malloc((sizeof(char)*stringLength(temp)+1));
-	stringCopy(string, temp);
-	return string;
-}
-
-int stringLength(char *string)
-{
-	int length=0;
-	while(string[length]!='\0')
-	{
-		length++;
-	}
-	return length;
-}
-
-void stringCopy(char *string1, char *string2)
-{
-    int i=0;
-    while(string2[i]!='\0')
+while(n!=5)
     {
-        string1[i]=string2[i];
-        i++;
+    printf("  \n1.String Cmp \n2.String Copy \n3.String Reverse \n4.Substring \n5.Exit");
+    printf("\nEnter your choice: ");
+    scanf("%d",&n);
+ 
+    switch(n)
+     { 
+       
+    
+case 1:  cmp(s,p);
+break;
+case 2: copy(s);
+break;
+case 3:reverse(s,p);
+break;
+case 4:subs(s,p);
+break;
+case 5: break;
+default: printf("\nEnter valid number");
+  }
     }
-    string1[i]='\0';
-}
-
-void stringReverse(char *string)
-{
-	int i, j;
-	char reverse[50];
-	for(i=0, j=(stringLength(string) -1); i<stringLength(string), j>=0; i++, j--)
-	{
-		reverse[i]=string[j];
-	}
-	printf("The reversed string is %s", reverse);
-}
-
-int stringPalindrome(char *string)
-{
-    int length, i, j;
-    length=stringLength(string);
-    if(length%2==0)
-    {
-        i=(length/2)-1;
-        j=i+1;
-    }
-    else
-    {
-        i=((length-1)/2)-1;
-        j=i+2;
-    }
-    while(j<length)
-    {
-    	if(string[i]==string[j])
-        {
-            i--;
-            j++;
-        }
-        else
-        {
-            return 0;
-            break;
-        }
-    }
-    return 1; 
-}
-
-void stringConcatenate(char *string1, char *string2)
-{
-	int i, j, length1, length2;
-	length1=stringLength(string1);
-	length2=stringLength(string2);
-	i=length1+1;
-	while(string2[j]!='\0')
-	{
-		string1[i]=string2[j];
-		i++;
-		j++;
-	}
-	//for(i=length1+1, j=0; string2[j]!='\0'; i++, j++)
-	string1[i]='\0';
-}
+    return 0;
+ 
+ }
+ 
+int len(char*s) //STRING LENGTH
+   { 
+     int c=0,i=0;
+     while(*(s+i)!='\0')
+      { 
+       c++;
+       i++;
+      }
+   
+     return c;
+   } 
+ 
+ void pallin(char*s)  //STRING PALLINDROME
+    { 
+      int f=0,i=0;
+      int l=len(s);
+      
+      while(i<l/2)
+        { 
+         if(*(s+i)!=*(s+l-1-i))
+          { 
+           f=1;
+           break;
+          }
+         i++;
+         } 
+         
+           if(f==1)
+            { 
+              printf("\nString is not a pallindrome!");
+             }
+             
+             else
+              { 
+               printf("\nString is a pallindrome!");
+              } 
+       }   
+       
+  void cmp(char*s,char*p) //STRING COMPARISON
+         { 
+           int i,f=0;
+            int l=len(s);
+       int m=len(p);
+      
+           
+           for(i=0;i<l;i++)
+             {  f=0;
+            
+                   if(*(s+i)!=*(p+i))
+                    { 
+                      f=1;
+                      break;
+                     }
+                   
+                 }
+                 
+               if(f==1)
+                 { 
+                   printf("\nString is not same");
+                   
+          
+                 }
+                else
+                 { 
+                   printf("\nString is same");
+                  }
+                   
+                }      
+                
+             void copy(char*s) //STRING COPY
+       { 
+         char *a;
+         a=(char*)malloc(sizeof(char)*10);
+         int i=0;
+          int l=len(s);
+           a=s;
+          
+        
+           
+            printf("\nCopied string is:%s",a);
+          } 
+             
+             
+            
+            
+           void reverse(char*s,char*p) //STRING REVERSE
+             { 
+              char *q,*r;
+               int l=len(s);
+                int m=len(p);
+              
+              q=(char*)malloc(sizeof(char)*10);
+              r=(char*)malloc(sizeof(char)*10);
+             
+               int i=0;
+                int j=0;
+                int x=l;
+                int y=m;
+                
+                
+                 for(i=0;i<=l;i++)
+                  { 
+                    *(q+i)=*(s+x-1-i);   
+                  
+                
+                   }
+                   
+                   printf("\nThe 1st reversed string is: %s ", q);
+                   
+                   for(j=0;j<=m;j++)
+                  { 
+                    *(r+j)=*(p+y-1-j);   
+                  
+                   }
+                    printf("\nThe 2nd reversed string is: %s ", r);
+                   }
+                   
+                   
+                 void subs(char*s,char*p) //SUBSTRING
+                  
+                  { 
+                  int i=0,j=0,c=0;
+                   int l=len(s);
+                    int m=len(p);
+                 
+                  while(*(s+i)!='\0')
+                    {
+                 
+                         while((*(s+i)==*(p+j)) && (*(s+i)!='\0'))
+                         {
+                          i++;
+                          j++;
+                          }
+                         
+                  
+                          if (j==m)
+                           { 
+                           c++;
+                       
+                           j=0;
+                           }
+                        
+                          else  if(j!=0)
+                          {
+                           j=0;
+                           }
+                           else 
+                           {
+                            i++;
+                           
+                            j=0;
+                            }}
+                            
+                     printf("Number of times Substring appears %d",c);
+                     }         
+                     
