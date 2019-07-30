@@ -11,20 +11,13 @@ Use new operator in constructors to allocate memory space required.
 */
 
 
-//---------------------------------------------------------------------
-
-//                    WORK IN PROGRESS !!!
-
-//---------------------------------------------------------------------
-
-
 #include<iostream>
 #include<string.h>
 #include<stdlib.h>
 
 using namespace std;
 
-class book		//defining class 
+class book					//defining class 
 {
 	char *author,*title,*publisher; 	//setting data members as pointers
 	float *price;
@@ -45,9 +38,9 @@ class book		//defining class
 	void buyBook();
 };
 
-void book :: feedData()		//function to get all the data
+void book :: feedData()				//function to get all the data
 {
-	cin.ignore();		//used cin.ignore(), as I have used getline funtion, so it is convinent for the user to input a string with spaces, and does not crash the program
+	cin.ignore();				//used cin.ignore(), as I have used getline funtion, so it is convinent for the user to input a string with spaces, and does not crash the program
 	cout<<"\nEnter title: ";
 	cin.getline(title,50);
 	cout<<"\nEnter author: ";
@@ -61,12 +54,12 @@ void book :: feedData()		//function to get all the data
 	cout<<"\n\n";
 }
 
-void book :: editData()		//function to edit the data
+void book :: editData()				//function to edit the data
 {
-	feedData();		//it is basically the feedData function called inside it
+	feedData();				//it is basically the feedData function called inside it
 }
 
-void book :: showData()		//function to display all the data of the book
+void book :: showData()				//function to display all the data of the book
 {
 	cout<<"\nTitle: "<<title;
 	cout<<"\nAuthor: "<<author;
@@ -75,14 +68,14 @@ void book :: showData()		//function to display all the data of the book
 	cout<<"\nStock: "<<*stock;
 }
 
-int book :: search(char tbuy[50],char abuy[50]) 	//function to search if a book and the author exists in stock or not 
+int book :: search(char tbuy[50],char abuy[50]) 		//function to search if a book and the author exists in stock or not 
 {
 	if(strcmp(tbuy,title)==0 && strcmp(abuy,author)==0) 	//this funtion compares the title and the author string with help of strcmp funtion
 		return 1;					//and if a book is found returns value 1, or else 0
 	else return 0;
 }
 
-void book :: buyBook()		//function to buy book
+void book :: buyBook()				//function to buy book
 {
 	int count;
 	cout<<"\nEnter the number of books to buy: ";
@@ -99,7 +92,7 @@ void book :: buyBook()		//function to buy book
 
 int main()
 {
-	book *B[100];		//objects initialized as array
+	book *B[100];				//objects initialized as array
 	int i=0,r,t,choice;
 	char titleBuy[50],authorBuy[50];
 	while(1)
