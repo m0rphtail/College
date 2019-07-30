@@ -82,7 +82,7 @@ void book :: buyBook()				//function to buy book
 	cin>>count;				//this function first checks if the stock of the books are sufficient
 	if(count<=*stock)			//if yes, then finds out the total cost of the books to be bought
 	{
-		*stock+*stock-count;
+		*stock=*stock-count;
 		cout<<"\nBooks bought successfully.";
 		cout<<"\nAmount: Rs "<<(*price)*count;
 	}
@@ -93,7 +93,7 @@ void book :: buyBook()				//function to buy book
 int main()
 {
 	book *B[100];				//objects initialized as array
-	int i=0,r,t,choice;
+	int i=0,t,choice;
 	char titleBuy[50],authorBuy[50];
 	while(1)
 	{
@@ -104,7 +104,7 @@ int main()
 		switch(choice)
 		{
 			case 1: B[i] = new book;
-				B[i]->feedData();
+				B[i]->feedData();		//dot and arrow are used to refrence indivitial members in class
 				i++;
 				break;
 

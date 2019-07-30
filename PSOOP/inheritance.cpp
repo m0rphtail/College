@@ -1,4 +1,6 @@
 #include<iostream>
+#include<string.h>
+
 using namespace std;
 
 class student
@@ -22,11 +24,11 @@ class marks : public student
 
 void student :: getData()
 {
-	cin.ignore();
+//	cin.ignore();
 	cout<<"\nEnter roll no: ";
 	cin>>roll_no;
 	cout<<"\nEnter name: ";
-	cin>>name;
+	cin.getline(name,50);
 	cout<<"\nEnter branch: ";
 	cin>>branch;
 }
