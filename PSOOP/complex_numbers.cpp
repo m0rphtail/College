@@ -24,7 +24,7 @@ class complex 	//class definition of complex number
 	complex friend operator + (complex a, complex b);	//prototyping a friend function
 	complex friend operator - (complex a, complex b);	//prototyping a friend function
 	
-	complex operator * (complex &number)		//using a copy constructor
+	complex operator * (complex &number)		//function overloading
 	{
 		complex product;			//initializing object
 		product.real = (real*number.real) - (imaginary*number.imaginary);	//calculating multiplication
@@ -32,7 +32,7 @@ class complex 	//class definition of complex number
 		return product;
 	}
 	
-	complex operator / (complex &number)		//using copy constuctor
+	complex operator / (complex &number)		//function overloading
 	{
 		complex division;			//initializing object
         float mod=(number.real*number.real + number.imaginary*number.imaginary);	//calculating division
