@@ -4,22 +4,23 @@
 int main()
 {
 	int *ptr;		//This pointer will hold the base address of the block
-	int n,i,sum=0;		
-	n=5;			//get the number of elements
-	printf("Number of elements %d",n);	
+	int n,i,sum=0;
+	printf("\nEnter a number: ");
+	scanf("%d",&n);				//get the number of elements
+	printf("\nNumber of elements %d",n);	
 	ptr=(int*)malloc(n * sizeof(int));		//dynamically allocate memory using malloc
 	if(ptr==NULL)			//check to see if memory has been allocated or not
 	{
-		printf("Memory not allocated");
+		printf("\nMemory not allocated");
 		exit(0);
 	}
 	else{
-		printf("Memory successfully allocated.");
+		printf("\nMemory successfully allocated.");
 		for(i=0;i<n;++i)
 		{
 			ptr[i]=i+1;
 		}
-		printf("Elements are: ");
+		printf("\nElements are: ");
 		for(i=0;i<n;++i)
 		{
 			printf("%d ",ptr[i]);
