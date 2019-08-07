@@ -8,15 +8,15 @@ int main()
 	char data[100];
 	//opening an existing file
 	printf("Opening the file test.txt in writing mode");
-	fp=fopen("test.txt","w");
-	if(fp==NULL)
+	fp = fopen("test.txt","w");
+	if(fp == NULL)
 	{
 		printf("Could not open file test.txt");
 		return 1;
 	}
 	printf("\nEnter some text: ");
 	//getting user input
-	while(strlen(gets(data))>0)
+	while( strlen ( gets ( data ) ) >0 )
 	{
 		//writing in the file
 		fputs(data,fp);
