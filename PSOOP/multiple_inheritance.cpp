@@ -8,7 +8,7 @@ using namespace std;
 
 class info
 {
-	int dob;
+	char dob[10];
 	char name[50],bloodgroup[5];
 	public:
 	void getData();
@@ -20,7 +20,7 @@ void info :: getData()
 	cout<<"\nEnter name: ";
 	cin.getline(name,50);
 	cout<<"\nEnter date of birth: ";
-	cin>>dob;
+	cin.getline(dob,10);
 	cout<<"\nEnter branch: ";
 	cin.getline(bloodgroup,5);
 }
@@ -29,30 +29,43 @@ void info :: display()
 	cout<<"\n\nName: "<<name<<"\nDate of birth: "<<dob<<"\nBlood Group: "<<bloodgroup;
 }
 
-class sports
+class physical
 {
-	int marks=0;
-	char w;
+	int height,weight;
 	public:
-	void getData();
-	void display();
+	void getDatap();
+	void displayp();
 };
 
-void sports :: getData()
+void physical :: getDatap()
 {
-	cout<<"Participated in sports? (y/n): ";
-	cin>>w;
+	cout<<"\nEnter height: ";
+	cin>>height;
+	cout<<"\nEnter weight: ";
+	cin>>weight;
 }
-void sports :: display()
+void physical :: display()
 {
-	if(w=='y')
-	{
-		marks=5;
-	}
-	else{
-		marks=0;
-	}
-	cout<<"sports marks are: "<<marks;
+	cout<<"\nHeight: "<<height;
+	cout<<"\nWeight: "<<weight
+}
+
+class insurance
+{
+	double policy_no;
+	char address[100];
+	public:
+	void getDatai();
+	void displayi();
+};
+
+void insurance :: getDatai()
+{
+	cin.ignore();
+	cout<<"Enter insurance policy number: ";
+	cin>>policy_no;
+	cout<<"Enter address: ";
+	cin.getline(address,100);
 }
 
 class marks : public student, public sports
