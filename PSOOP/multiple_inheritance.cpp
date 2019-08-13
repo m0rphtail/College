@@ -44,10 +44,10 @@ void physical :: getDatap()
 	cout<<"\nEnter weight: ";
 	cin>>weight;
 }
-void physical :: display()
+void physical :: displayp()
 {
 	cout<<"\nHeight: "<<height;
-	cout<<"\nWeight: "<<weight
+	cout<<"\nWeight: "<<weight;
 }
 
 class insurance
@@ -68,31 +68,41 @@ void insurance :: getDatai()
 	cin.getline(address,100);
 }
 
-class marks : public student, public sports
+void insurance :: displayi()
 {
-	int sub_marks,total_marks;
-	public:
-	void getData();
-	void display();
-};
-void marks :: getData()
-{
-student:getData();
-sports:getData();
-	cout<<"Enter marks: ";
-	cin>>sub_marks;
+	cout<<"Insurance number: "<<policy_no;
+	cout<<"Address: "<<address;
 }
-void marks :: display()
+
+class data : public info, public physical, public insurance
 {
-student:display();
-sports:display();
-	total_marks = sub_marks;
-	cout<<"Total marks: "<<total_marks;
+	int phone_no,licence;
+	public:
+	void getDatad();
+	void displayd();
+};
+void data :: getDatad()
+{
+//info:getData();
+//physical:getDatap();
+//insurance:getDatai();
+	cout<<"Enter licence number: ";
+	cin>>licence;
+	cout<<"Enter phone number: ";
+	cin>>phone_no;
+}
+void data :: displayd()
+{
+//info:display();
+//physical:display();
+//insurance:display();
+	cout<<"Licence number: "<<licence;
+	cout<<"Phone number: "<<phone_no;
 }
 
 int main()
 {
-	marks m;
+	data m;
 	m.getData();
 	m.display();
 	return 0;
