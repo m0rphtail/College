@@ -6,27 +6,27 @@
 #include<stdlib.h>
 using namespace std;
 
-class student
+class info
 {
-	int roll_no;
-	char name[50],branch[50];
+	int dob;
+	char name[50],bloodgroup[5];
 	public:
 	void getData();
 	void display();
 };
-void student :: getData()
+void info :: getData()
 {
 	cin.ignore();
-	cout<<"\nEnter the roll no: ";
-	cin>>roll_no;
 	cout<<"\nEnter name: ";
 	cin.getline(name,50);
+	cout<<"\nEnter date of birth: ";
+	cin>>dob;
 	cout<<"\nEnter branch: ";
-	cin.getline(branch,50);
+	cin.getline(bloodgroup,5);
 }
-void student :: display()
+void info :: display()
 {
-	cout<<"\n\nRoll no: "<<roll_no<<"\nName: "<<name<<"\nBranch: "<<branch;
+	cout<<"\n\nName: "<<name<<"\nDate of birth: "<<dob<<"\nBlood Group: "<<bloodgroup;
 }
 
 class sports
