@@ -1,6 +1,3 @@
-
-//................DOES NOT WORK :( ...................
-
 #include<iostream>
 #include<string.h>
 #include<stdlib.h>
@@ -8,20 +5,18 @@ using namespace std;
 
 class info
 {
-	char dob[10];
-	char name[50],bloodgroup[5];
+	char dob[11],name[50],bloodgroup[5];
 	public:
 	void getData();
 	void display();
 };
 void info :: getData()
 {
-	cin.ignore();
 	cout<<"\nEnter name: ";
 	cin.getline(name,50);
-	cout<<"\nEnter date of birth: ";
-	cin.getline(dob,10);
-	cout<<"\nEnter branch: ";
+	cout<<"\nEnter date of birth (dd/mm/yyyy): ";
+	cin.getline(dob,11);
+	cout<<"\nEnter blood group: ";
 	cin.getline(bloodgroup,5);
 }
 void info :: display()
@@ -61,49 +56,50 @@ class insurance
 
 void insurance :: getDatai()
 {
-	cin.ignore();
-	cout<<"Enter insurance policy number: ";
+	cout<<"\nEnter insurance policy number: ";
 	cin>>policy_no;
-	cout<<"Enter address: ";
+	cout<<"\nEnter address: ";
+	cin.getline(address,100);
 	cin.getline(address,100);
 }
 
 void insurance :: displayi()
 {
-	cout<<"Insurance number: "<<policy_no;
-	cout<<"Address: "<<address;
+	cout<<"\nInsurance number: "<<policy_no;
+	cout<<"\nAddress: "<<address;
 }
 
 class data : public info, public physical, public insurance
 {
-	int phone_no,licence;
+	int phone_no;
+	char licence[20];
 	public:
 	void getDatad();
 	void displayd();
 };
 void data :: getDatad()
 {
-//info:getData();
-//physical:getDatap();
-//insurance:getDatai();
-	cout<<"Enter licence number: ";
-	cin>>licence;
-	cout<<"Enter phone number: ";
-	cin>>phone_no;
+info:getData();
+physical:getDatap();
+insurance:getDatai();
+	  cout<<"\nEnter licence number: ";
+	  cin.getline(licence,20);
+	  cout<<"\nEnter phone number: ";
+	  cin>>phone_no;
 }
 void data :: displayd()
 {
-//info:display();
-//physical:display();
-//insurance:display();
-	cout<<"Licence number: "<<licence;
-	cout<<"Phone number: "<<phone_no;
+info:display();
+physical:displayp();
+insurance:displayi();
+	  cout<<"\nLicence number: "<<licence;
+	  cout<<"\nPhone number: "<<phone_no;
 }
 
 int main()
 {
 	data m;
-	m.getData();
-	m.display();
+	m.getDatad();
+	m.displayd();
 	return 0;
 }
