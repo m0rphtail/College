@@ -99,13 +99,14 @@ insurance:displayi();
 
 int main()
 {
-	int n,l;
+	int n,i;
 	cout<<"Enter number of data entries: ";
 	cin>>n;
-	data z[2];
-	for(l=1;l<=2;l++){
-	z[2].getDatad();}
-	for(l=1;l<=2;l++){
-	z[2].displayd();}
+	data z[n];
+	for(i=0;i<n;i++){
+	cout<<"Entry "<<i+1;
+	z[i].getDatad();}
+	for(i=0;i<n;i++){
+	z[i].displayd();}
 	return 0;
 }
