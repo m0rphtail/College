@@ -7,84 +7,84 @@ void saddle(int[][100],int,int);
 
 int main()
 {
- int a[100][100],b[100][100];
- int i=0,j=0,r1,r2,c1,c2,ch;
-a:
- printf("\nEnter number of row:");
- scanf("%d",&r1);
-if(r1<=0)
-{
-printf("Invalid number. Enter again!\n");
-goto a;
-}
-else{}
-b:
- printf("\nEnter number of coloumn:");
- scanf("%d",&c1);
-if(c1<=0)
-{
-printf("Invalid number. Enter again!");
-goto b;
-}
-else{}
- printf("\nEnter first matrix:");
- for(i=0;i<r1;i++)
- {
-  for(j=0;j<c1;j++)
-   { 
-    scanf("%d",&a[i][j]);
-    }
- }   
+	 int a[100][100],b[100][100];
+	 int i=0,j=0,r1,r2,c1,c2,ch;
+	a:
+	 printf("\nEnter number of row:");
+	 scanf("%d",&r1);
+	if(r1<=0)
+	{
+		printf("Invalid number. Enter again!\n");
+		goto a;
+	}
+	else{}
+	b:
+	 printf("\nEnter number of coloumn:");
+	 scanf("%d",&c1);
+	if(c1<=0)
+	{
+		printf("Invalid number. Enter again!");
+		goto b;
+	}
+	else{}
+	 printf("\nEnter first matrix:");
+	 for(i=0;i<r1;i++)
+	 {
+		  for(j=0;j<c1;j++)
+		   { 
+			    scanf("%d",&a[i][j]);
+		    }
+	 }   
  
- printf("\nFirst matrix is:\n");
-  for(i=0;i<r1;i++)
- {
-  for(j=0;j<c1;j++)
-   { 
-    printf("\t%d",a[i][j]);
-    }
-    printf("\n");
- }
- c:
-  printf("\nEnter number of row:");
- scanf("%d",&r2);
-if(r2<=0)
-{
-printf("Invalid number. Enter again!");
-goto c;
-}
-else{}
-d:
- printf("\nEnter number of coloumn:");
- scanf("%d",&c2);
-if(c2<=0)
-{
-printf("Invalid number. Enter again!");
-goto d;
-}
- printf("\nEnter second matrix:");
- for(i=0;i<r2;i++)
- {
-  for(j=0;j<c2;j++)
-   { 
-    scanf("%d",&b[i][j]);
-    }
- }   
+	 printf("\nFirst matrix is:\n");
+	  for(i=0;i<r1;i++)
+	 {
+		  for(j=0;j<c1;j++)
+		   { 
+			    printf("\t%d",a[i][j]);
+		    }
+		    printf("\n");
+	 }
+	 c:
+	  printf("\nEnter number of row:");
+	 scanf("%d",&r2);
+	if(r2<=0)
+	{
+		printf("Invalid number. Enter again!");
+		goto c;
+	}
+	else{}
+	d:
+	 printf("\nEnter number of coloumn:");
+	 scanf("%d",&c2);
+	if(c2<=0)
+	{
+		printf("Invalid number. Enter again!");
+		goto d;
+	}
+	 printf("\nEnter second matrix:");
+	 for(i=0;i<r2;i++)
+	 {
+		  for(j=0;j<c2;j++)
+		   { 
+			    scanf("%d",&b[i][j]);
+		    }
+	 }   
  
- printf("\nSecond matrix is:\n");
+	 printf("\nSecond matrix is:\n");
  
  
 
- for(i=0;i<r2;i++)
- {
-  for(j=0;j<c2;j++)
-   { 
-    printf("\t%d",b[i][j]);
-    }
-    printf("\n");
- }    
- do{
-printf("\n1.Addition of matrix\n2.Subtaction of matrix\n3.Multiplication\n4.Transpose\n5.Saddle point\n6.Exit\n");
+	 for(i=0;i<r2;i++)
+	 {
+		  for(j=0;j<c2;j++)
+		   { 
+			    printf("\t%d",b[i][j]);
+		    }
+		    printf("\n");
+	 }    
+	 do{
+	printf("\n1.Addition of matrix\n2.Subtaction of matrix\n3.Multiplication\n4.Transpose\n5.Saddle point\n6.Exit\n");
 	printf("\nEnter your choice : ");
 	scanf("%d",&ch);
 switch(ch)
