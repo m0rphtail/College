@@ -14,6 +14,7 @@ void info :: getData()
 {
 	cout<<"\nEnter name: ";
 	cin.getline(name,50);
+	cin.getline(name,50);
 	cout<<"\nEnter date of birth (dd/mm/yyyy): ";
 	cin.getline(dob,11);
 	cout<<"\nEnter blood group: ";
@@ -98,8 +99,13 @@ insurance:displayi();
 
 int main()
 {
-	data m;
-	m.getDatad();
-	m.displayd();
+	int n,l;
+	cout<<"Enter number of data entries: ";
+	cin>>n;
+	data z[2];
+	for(l=1;l<=2;l++){
+	z[2].getDatad();}
+	for(l=1;l<=2;l++){
+	z[2].displayd();}
 	return 0;
 }
