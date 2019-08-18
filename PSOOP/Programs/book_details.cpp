@@ -19,7 +19,7 @@ class book
 	}
 	void display()
 	{
-		cout<<"\nName: "<<name<<"\nPages: "<<pages<<"\nPrice: "<<price;
+		cout<<"\n\nName: "<<name<<"\nPages: "<<pages<<"\nPrice: "<<price;
 	}
 };
 
