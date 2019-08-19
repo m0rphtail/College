@@ -26,4 +26,4 @@ int main()
 	a3.accepts();
 	cout<<a3.x;
 	return 0;
-}
+}//Kshitij Chitnis

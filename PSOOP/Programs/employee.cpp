@@ -51,4 +51,4 @@ class employee
         		obj[i].putdata();
         	}
         	return 0;
-        }
+        }//Kshitij Chitnis

@@ -97,7 +97,7 @@ int main()
 	char titleBuy[50],authorBuy[50];
 	while(1)
 	{
-		cout<<"\n\n\tMENU";
+		cout<<"\n\n\t----KSHITIJ's BOOK SHOP---------------------";
 		cout<<"\n1. Entry of new book.\n2. Buy book.\n3. Search for book.\n4. Edit details of book.\n5. Exit\nEnter your choice: "; 	//menu
 		cin>>choice;
 		
@@ -170,7 +170,7 @@ int main()
 	}
 	return 0;
 }
-						
+		//Kshitij Chitnis				
 
 		
 

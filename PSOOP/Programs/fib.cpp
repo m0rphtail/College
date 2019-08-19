@@ -36,3 +36,4 @@ int main()
 	s1.displayseries(n);
 	return 0;	
 }
+//Kshitij Chitnis

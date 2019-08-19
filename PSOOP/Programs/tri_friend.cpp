@@ -25,4 +25,4 @@ int main()
 	cout<<"\nArea of triangle is "<<area(o);
 	return 0;
 }
-
+//Kshitij Chitnis
