@@ -1,30 +1,30 @@
-#include<iostream>
-using namespace std;
-class value
-{
-private:
-	int x;
-public:
-	value()
-	{
-		x = 0;
-	}
-	void *operator new(size_t size)
-	{
-		return malloc(size);
-	}
-	void operator delete (void* p)
-	{
-		cout << "\nOverloaded delete operator.";
-		free (p);
-
-	}
-
-
-};
-int main()
-{
-	value* v = new value;
-	delete v;
-	return 0;
-}//Kshitij Chitnis
+#include<iostream>                                                //KC
+using namespace std;                                                //KC
+class value                                                //KC
+{                                                //KC
+private:                                                //KC
+	int x;                                                //KC
+public:                                                //KC
+	value()                                                //KC
+	{                                                //KC
+		x = 0;                                                //KC
+	}                                                //KC
+	void *operator new(size_t size)                                                //KC
+	{                                                //KC
+		return malloc(size);                                                //KC
+	}                                                //KC
+	void operator delete (void* p)                                                //KC
+	{                                                //KC
+		cout << "\nOverloaded delete operator.";                                                //KC
+		free (p);                                                //KC
+                                                //KC
+	}                                                //KC
+                                                //KC
+                                                //KC
+};                                                //KC
+int main()                                                //KC
+{                                                //KC
+	value* v = new value;                                                //KC
+	delete v;                                                //KC
+	return 0;                                                //KC
+}//Kshitij Chitnis                                                //KC

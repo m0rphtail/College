@@ -1,43 +1,43 @@
-/*Program to overload unary operator*/
-
-#include<iostream>
-using namespace std;
-class unary
-{
-private:
-	int x, y;
-public:
-	void getdata(int a, int b);
-	void display();
-	void operator -();
-
-};
-void unary::getdata(int a, int b)
-{
-	x = a;
-	y = b;
-
-}
-void unary::operator-()
-{
-	x = --x;
-	y = --y;
-
-}
-
-void unary::display()
-{
-	cout << "\nValue of x is: " << x;
-	cout << "\nValue of y is: " << y;
-
-}
-
-int main()
-{
-	unary i;
-	i.getdata(50, 60);
-	i.display();
-	-i; // calls operator overloading function
-	i.display();
-	return 0;
-}//Kshitij Chitnis
+/*Program to overload unary operator*/                                                //KC
+                                                //KC
+#include<iostream>                                                //KC
+using namespace std;                                                //KC
+class unary                                                //KC
+{                                                //KC
+private:                                                //KC
+	int x, y;                                                //KC
+public:                                                //KC
+	void getdata(int a, int b);                                                //KC
+	void display();                                                //KC
+	void operator -();                                                //KC
+                                                //KC
+};                                                //KC
+void unary::getdata(int a, int b)                                                //KC
+{                                                //KC
+	x = a;                                                //KC
+	y = b;                                                //KC
+                                                //KC
+}                                                //KC
+void unary::operator-()                                                //KC
+{                                                //KC
+	x = --x;                                                //KC
+	y = --y;                                                //KC
+                                                //KC
+}                                                //KC
+                                                //KC
+void unary::display()                                                //KC
+{                                                //KC
+	cout << "\nValue of x is: " << x;                                                //KC
+	cout << "\nValue of y is: " << y;                                                //KC
+                                                //KC
+}                                                //KC
+                                                //KC
+int main()                                                //KC
+{                                                //KC
+	unary i;                                                //KC
+	i.getdata(50, 60);                                                //KC
+	i.display();                                                //KC
+	-i; // calls operator overloading function                                                //KC
+	i.display();                                                //KC
+	return 0;                                                //KC
+}//Kshitij Chitnis                                                //KC

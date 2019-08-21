@@ -1,38 +1,38 @@
-#include<iostream>
-using namespace std;
-
-class volume
-{
-	int x,y,z;
-	public:
-	volume(int a)
-	{
-		x=a;
-	}
-	volume(int a,int b)
-	{
-		x=a;
-		y=b;
-	}
-	void displaycube();
-	void displaycylinder();
-};
-
-void volume::displaycube()
-{
-	cout<<"\nVolume of cube is "<<x*x*x;
-}
-
-void volume::displaycylinder()
-{
-	cout<<"\nVolume of cylinder is "<<3.14*x*x*y;
-}
-
-int main()
-{
-	volume o1(10);
-	volume o2(10,5);
-	o1.displaycube();
-	o2.displaycylinder();
-	return 0;
-}//Kshitij Chitnis
+#include<iostream>                                                //KC
+using namespace std;                                                //KC
+                                                //KC
+class volume                                                //KC
+{                                                //KC
+	int x,y,z;                                                //KC
+	public:                                                //KC
+	volume(int a)                                                //KC
+	{                                                //KC
+		x=a;                                                //KC
+	}                                                //KC
+	volume(int a,int b)                                                //KC
+	{                                                //KC
+		x=a;                                                //KC
+		y=b;                                                //KC
+	}                                                //KC
+	void displaycube();                                                //KC
+	void displaycylinder();                                                //KC
+};                                                //KC
+                                                //KC
+void volume::displaycube()                                                //KC
+{                                                //KC
+	cout<<"\nVolume of cube is "<<x*x*x;                                                //KC
+}                                                //KC
+                                                //KC
+void volume::displaycylinder()                                                //KC
+{                                                //KC
+	cout<<"\nVolume of cylinder is "<<3.14*x*x*y;                                                //KC
+}                                                //KC
+                                                //KC
+int main()                                                //KC
+{                                                //KC
+	volume o1(10);                                                //KC
+	volume o2(10,5);                                                //KC
+	o1.displaycube();                                                //KC
+	o2.displaycylinder();                                                //KC
+	return 0;                                                //KC
+}//Kshitij Chitnis                                                //KC

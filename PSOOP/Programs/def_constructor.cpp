@@ -1,24 +1,24 @@
-//Default/non parameterized constructor
-
-#include<iostream>
-using namespace std;
-class volume
-{
-	int s;
-	public:
-	volume()	//default constructor
-	{
-		s=10;
-	}
-	void display()
-	{
-		cout<<"Volume is "<<s*s*s;
-	}
-};
-
-int main()
-{
-	volume a;
-	a.display();
-	return 0;
-}//Kshitij Chitnis
+//Default/non parameterized constructor                                                //KC
+                                                //KC
+#include<iostream>                                                //KC
+using namespace std;                                                //KC
+class volume                                                //KC
+{                                                //KC
+	int s;                                                //KC
+	public:                                                //KC
+	volume()	//default constructor                                                //KC
+	{                                                //KC
+		s=10;                                                //KC
+	}                                                //KC
+	void display()                                                //KC
+	{                                                //KC
+		cout<<"Volume is "<<s*s*s;                                                //KC
+	}                                                //KC
+};                                                //KC
+                                                //KC
+int main()                                                //KC
+{                                                //KC
+	volume a;                                                //KC
+	a.display();                                                //KC
+	return 0;                                                //KC
+}//Kshitij Chitnis                                                //KC
