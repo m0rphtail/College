@@ -14,21 +14,52 @@ struct student
 }s;
 
 void read();
-//void add();
-//void search();
-//void modify();
-//void delete();
+void add();
+void search();
+void modify();
+void delete();
 void display();
+void exit();
 
 int main()
 {
+	int c;
+	char l;
 	FILE *x;
 	x=fopen("Assignment5.txt", "w");
 	fprintf(x,"");
 	fclose(x);
-	read();
-	read();
-	display();
+	a:
+	printf("\n\nSelect an option\n1. Add Data\n2. Search Data\n3. Modify Data\n4. Delete Data\n5. Display Data\n6. Exit\nEnter your choice: ");
+	scanf("%d", &c);
+	printf("\n");
+	switch(c)
+	{
+		case 1:read();
+		break;
+		case 2:search();
+		break;
+		case 3:modify();
+		break;
+		case 4:delete();
+		break;
+		case 5:display();
+		break;
+		case 6:exit(1);
+		break;
+		default:printf("Invalid choice!");
+		break;
+	}
+	printf("Do you want to continue? (y/n) : ");
+	scanf("%s", &l);
+	if(l=='y')
+	{
+		goto a;
+	}
+	else
+	{
+		exit(1);
+	}
 	return 0;
 }
 
@@ -51,6 +82,26 @@ void read()
 	}
 }
 
+void add()
+{
+	read();
+}
+
+void search()
+{
+
+}
+
+void modify()
+{
+
+}
+
+void delete()
+{
+
+}
+
 void display()
 {
 	FILE *q;
@@ -68,10 +119,7 @@ void display()
 		while(!feof(q));
 	}
 	fclose(q);
+}
 
-
-
-
-
-}	
+	
 
