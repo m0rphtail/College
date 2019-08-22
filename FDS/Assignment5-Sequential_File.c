@@ -22,8 +22,11 @@ void display();
 
 int main()
 {
-	//FILE *x;
-	//x=fopen()
+	FILE *x;
+	x=fopen("Assignment5.txt", "w");
+	fprintf(x,"");
+	fclose(x);
+	read();
 	read();
 	display();
 	return 0;
@@ -32,7 +35,7 @@ int main()
 void read()
 {
 	FILE *p;
-	p=fopen("Assignment5.txt", "w");
+	p=fopen("Assignment5.txt", "a");
 	if(p==NULL)
 	{
 		printf("File failed to open!");
@@ -43,7 +46,7 @@ void read()
 		scanf("%s", s.name);
 		printf("Enter roll number: ");
 		scanf("%d", &s.roll_no);
-		fprintf(p,"%s",s.name,s.roll_no);
+		fprintf(p,"%s %d",s.name,s.roll_no);
 		fclose(p);
 	}
 }
@@ -53,16 +56,22 @@ void display()
 	FILE *q;
 	if((q=fopen("Assignment5.txt", "r"))==NULL)
 	{
-	printf("NULL");
+		printf("File empty!");
 	}
-	else{
-	do
+	else
 	{
-		fscanf(q,"%s %d",s.name, s.roll_no);
-		printf("%s %d", s.name, s.roll_no);
-	}
-	while(!feof(q));
+		do
+		{
+			fscanf(q,"%s %d",s.name, &s.roll_no);
+			printf("Name: %s \nRoll No: %d", s.name, s.roll_no);
+		}
+		while(!feof(q));
 	}
 	fclose(q);
+
+
+
+
+
 }	
 
