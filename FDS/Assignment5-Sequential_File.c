@@ -6,6 +6,8 @@ iv. Modify record
 v. Delete record */
 
 #include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
 struct student
 {
@@ -13,9 +15,9 @@ struct student
 	int roll_no,marks;
 }s;
 
-void read();
+void write();
 void add();
-void search();
+void search(char[]);
 void modify();
 void delete();
 void display();
@@ -23,8 +25,8 @@ void exit();
 
 int main()
 {
-	int c;
-	char l;
+	int c,i,t;
+	char l,fname[50];
 	FILE *x;
 	x=fopen("Assignment5.txt", "w");
 	fprintf(x,"");
@@ -35,9 +37,14 @@ int main()
 	printf("\n");
 	switch(c)
 	{
-		case 1:read();
+		case 1:write();
 		break;
-		case 2:search();
+		case 2:printf("Enter name to search: ");
+			scanf("%s", fname);
+			FILE *s;	
+			s=fopen("Assignment5.txt", "r");
+			search(fname);
+			fclose(s);
 		break;
 		case 3:modify();
 		break;
@@ -63,7 +70,7 @@ int main()
 	return 0;
 }
 
-void read()
+void write()
 {
 	FILE *p;
 	p=fopen("Assignment5.txt", "a");
@@ -81,19 +88,21 @@ void read()
 		scanf("%d",&s.marks);
 		printf("Enter grade: ");
 		scanf("%s", s.grade);
-		fprintf(p,"%s %d %d %s",s.name, s.roll_no, s.marks, s.grade);
+		fprintf(p,"%s %d %d %s\n",s.name, s.roll_no, s.marks, s.grade);
 		fclose(p);
 	}
 }
 
 void add()
 {
-	read();
+	write();
 }
 
-void search()
+void search(char qname[50])
 {
-
+	if(strcmp(qname,s.name)==0)
+	printf("Data found!");
+	else printf("Data not found!");
 }
 
 void modify()
