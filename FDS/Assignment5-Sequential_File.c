@@ -9,7 +9,7 @@ v. Delete record */
 
 struct student
 {
-	char name[50],grade;
+	char name[50],grade[5];
 	int roll_no,marks;
 }s;
 
@@ -50,8 +50,8 @@ int main()
 		default:printf("Invalid choice!");
 		break;
 	}
-	printf("Do you want to continue? (y/n) : ");
-	scanf("%s", &l);
+	printf("\nDo you want to continue? (y/n) : ");
+	scanf("%s",&l);
 	if(l=='y')
 	{
 		goto a;
@@ -77,7 +77,11 @@ void read()
 		scanf("%s", s.name);
 		printf("Enter roll number: ");
 		scanf("%d", &s.roll_no);
-		fprintf(p,"%s %d",s.name,s.roll_no);
+		printf("Enter marks: ");
+		scanf("%d",&s.marks);
+		printf("Enter grade: ");
+		scanf("%s", s.grade);
+		fprintf(p,"%s %d %d %s",s.name, s.roll_no, s.marks, s.grade);
 		fclose(p);
 	}
 }
@@ -113,8 +117,8 @@ void display()
 	{
 		do
 		{
-			fscanf(q,"%s %d",s.name, &s.roll_no);
-			printf("Name: %s \nRoll No: %d", s.name, s.roll_no);
+			fscanf(q,"%s %d %d %s",s.name, &s.roll_no, &s.marks, s.grade);
+			printf("\n\nName: %s \nRoll No: %d \nMarks: %d \nGrade: %s", s.name, s.roll_no, s.marks, s.grade);
 		}
 		while(!feof(q));
 	}
