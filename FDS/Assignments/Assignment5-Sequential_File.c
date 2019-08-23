@@ -26,7 +26,7 @@ void exit();
 int main()
 {
 	int c,i,t;
-	char l,fname[50];
+	char l,l2,fname[50];
 	FILE *x;
 	x=fopen("Assignment5.txt", "w");
 	fprintf(x,"");
@@ -37,7 +37,13 @@ int main()
 	printf("\n");
 	switch(c)
 	{
-		case 1:write();
+		case 1:b:
+			write();
+			printf("Enter more data? (y/n) : ");
+			scanf("%s", &l2);
+			if(l2=='y')
+			{goto b;}
+			else
 		break;
 		case 2:printf("Enter name to search: ");
 			scanf("%s", fname);
