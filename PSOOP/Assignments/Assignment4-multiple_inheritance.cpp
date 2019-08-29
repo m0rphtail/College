@@ -35,15 +35,15 @@ class physical
 
 void physical :: getDatap()
 {
-	cout<<"\nEnter height: ";
+	cout<<"\nEnter height (in cm): ";
 	cin>>height;
-	cout<<"\nEnter weight: ";
+	cout<<"\nEnter weight (in kg): ";
 	cin>>weight;
 }
 void physical :: displayp()
 {
-	cout<<"\nHeight: "<<height;
-	cout<<"\nWeight: "<<weight;
+	cout<<"\nHeight: "<<height<<" cm";
+	cout<<"\nWeight: "<<weight<<" kg";
 }
 
 class insurance
@@ -94,7 +94,7 @@ info:display();
 physical:displayp();
 insurance:displayi();
 	  cout<<"\nLicence number: "<<licence;
-	  cout<<"\nPhone number: "<<phone_no;
+	  cout<<"\nPhone number: +91 "<<phone_no;
 }
 
 int main()
