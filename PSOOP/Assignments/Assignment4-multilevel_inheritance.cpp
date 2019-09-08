@@ -23,7 +23,8 @@ class Base3
 class Intermediate: public Base1, public Base2, public Base3
 {
 	public:
-	char telephone[10], license[10];
+	char license[10];
+	char telephone[10];
 };
 
 class Derived: public Intermediate
@@ -67,11 +68,11 @@ class Derived: public Intermediate
 			cout << "\nName: " << d[i].name;
 			cout << "\nDate of birth: " << d[i].dob;
 			cout << "\nBlood group: " << d[i].bloodgroup;		
-			cout << "\nHeight: " << d[i].height;
-			cout << "\nWeight: " << d[i].weight;
+			cout << "\nHeight: " << d[i].height << " cms";
+			cout << "\nWeight: " << d[i].weight << " kg";
 			cout << "\nPolicy number: " << d[i].policy;
 			cout << "\nAddress: " << d[i].address;
-			cout << "\nTelephone number: " << d[i].telephone;
+			cout << "\nTelephone number: +91 " << d[i].telephone;
 			cout << "\nLicense number: " << d[i].license << endl;
 		}
 	}
