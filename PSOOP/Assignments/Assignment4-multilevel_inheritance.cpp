@@ -1,36 +1,36 @@
 #include<iostream>
 using namespace std;
 
-class Base1
+class Base1		//declaring first base class
 {
 	public:
 	int id;
 	char name[30], dob[20], bloodgroup[10];
 };
 
-class Base2
+class Base2		//declaring second base class
 {
 	public:
 	float height, weight;
 };
 
-class Base3
+class Base3		//declaring third base class
 {
 	public:
 	char policy[10], address[50];
 };
 
-class Intermediate: public Base1, public Base2, public Base3
+class Intermediate: public Base1, public Base2, public Base3		//inheriting intermediate class from base1, base2, base3
 {
 	public:
 	char license[10];
 	char telephone[10];
 };
 
-class Derived: public Intermediate
+class Derived: public Intermediate		//deriving class from intermediate class 
 {
 	public:
-	void create()
+	void create()		//function to input data and create database
 	{
 		cout << "\nEnter ID: ";
 		cin >> id;
@@ -59,7 +59,7 @@ class Derived: public Intermediate
 		cin >> license;
 	}
 	
-	void display(Derived d[], int n)
+	void display(Derived d[], int n)		//function to display data
 	{
 		int i;
 		for(i=0; i<n; i++)
@@ -77,7 +77,7 @@ class Derived: public Intermediate
 		}
 	}
 	
-	int deleteRecord(Derived d[], int n)
+	int deleteRecord(Derived d[], int n)		//function to find a data and if found, delete it.
 	{
 		int i, pos, field;
 		cout << "\nEnter ID to delete: ";
