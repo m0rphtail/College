@@ -107,7 +107,7 @@ class Derived: public Intermediate		//deriving class from intermediate class
 		return n;
 	}
 	
-	void edit(Derived d[], int n)
+	void edit(Derived d[], int n)			
 	{
 		int result, field;
 		cout << "\nEnter ID to edit: ";
