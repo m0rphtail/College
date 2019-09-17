@@ -1,52 +1,46 @@
 #include<iostream>
 
-//void add(M, M);
-int const size=3;
+int const size=3;cout<<"\nenter no of rows of first matrix\n";
+	cin>>n1;
+	cout<<"\nenter no of columns of first matrix\n";
+	cin>>m1;
 using namespace std;
 
-//addition function
 template <class M, class S>
 void add(M a[][size],S b[][size])
 {
- S c[size][size];
- for(int i=0;i<size;i++)
-    for(int j=0;j<size;j++)
-    {
-    c[i][j]=a[i][j]+b[i][j];
-    }
+	S c[size][size];
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size;j++)
+		{
+			c[i][j]=a[i][j]+b[i][j];
+    		}
 
- for(int i=0;i<size;i++)
-      {
-    for(int j=0;j<size;j++)
-    {
-     cout<<"   "<<c[i][j];
-      }
-    cout<<endl;
-    }
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size;j++)
+    		{
+     			cout<<"   "<<c[i][j];
+      		}
+    		cout<<endl;
 }
 
-//substraction
 template <class M,class S>
 void sub(M a[][size],S b[][size])
 {
- S c[size][size];
- for(int i=0;i<size;i++)
-    for(int j=0;j<size;j++)
-    {
-    c[i][j]=a[i][j]-b[i][j];
-    }
-
- for(int i=0;i<size;i++)
-      {
-    for(int j=0;j<size;j++)
-    {
-     cout<<"   "<<c[i][j];
-      }
-    cout<<endl;
-    }
+	S c[size][size];
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size;j++)
+		{
+			c[i][j]=a[i][j]-b[i][j];
+		}
+	for(int i=0;i<size;i++)
+		for(int j=0;j<size;j++)
+		{
+			cout<<"   "<<c[i][j];
+		}
+		cout<<endl;
 }
 
-//multiplication
 template <class M,class S>
 void mul(M a[][size],S b[][size])
 {
@@ -99,7 +93,7 @@ int main()
  int ch;
 
 //Read matrices
- cout<<endl<<"Enter values for Int matrix X:";
+ cout<<endl<<"Enter values for matrix X:";
  for(int i=0;i<size;i++)
       {
     for(int j=0;j<size;j++)
@@ -109,7 +103,7 @@ int main()
     cout<<endl;
     }
 
- cout<<endl<<"Enter values for float matrix g:";
+ cout<<endl<<"Enter values for matrix g:";
   for(int i=0;i<size;i++)
       {
     for(int j=0;j<size;j++)
