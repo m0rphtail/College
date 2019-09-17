@@ -1,9 +1,6 @@
 #include<iostream>
 
-int const size=3;cout<<"\nenter no of rows of first matrix\n";
-	cin>>n1;
-	cout<<"\nenter no of columns of first matrix\n";
-	cin>>m1;
+int const size=3;
 using namespace std;
 
 template <class M, class S>
