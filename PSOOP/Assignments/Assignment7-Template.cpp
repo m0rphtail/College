@@ -98,6 +98,7 @@ void matrix<t>::add()
 		cout<<"\nenter correct matrices \n";
 	}
 }
+
 template<class t>
 void matrix<t>::sub()
 {
@@ -187,48 +188,7 @@ void matrix<t>::mul()
 		}
 		cout<<endl<<endl;
 	}
-	
 }
-
-template<class t>
-void matrix<t>::saddle()
-{
-	t minval,maxval;
-	int i,j,x,col,flag=0;
-	for(i=0;i<n1;i++)
-	{
-		minval=a[i][0];
-		for(j=0;j<m1;j++)
-		{
-			if(minval>a[i][j])
-			{
-				minval=a[i][j];
-				col=j;
-			}
-		}
-		maxval=a[0][col];
-		for(x=0;x<n1;x++)
-		{
-			if(maxval<a[x][col])
-			{
-				maxval=a[x][col];
-			}
-		}
-		if(minval==maxval)
-		{
-			flag=1;
-		}	
-	}
-	if(flag==1)
-	{
-		cout<<"\nsaddle point is present and"<<minval<<" is a saddle point in first matrix\n";
-	}
-	else
-	{
-		cout<<"saddle point is absent in first matrix";
-	}
-}
-
 
 int main()
 {
@@ -241,7 +201,7 @@ int main()
 	cin>>x;
 	if(x==1){
 	do{
-	cout<<"\nFor integers\n1.getdata\n2.addition\n3.subtraction\n4.transpose\n5.multiplication\n6.saddle point\n";
+	cout<<"\nFor integers\n1.getdata\n2.addition\n3.subtraction\n4.transpose\n5.multiplication\n";
 	cin>>ch1;
 	switch(ch1)
 	{
@@ -261,9 +221,6 @@ int main()
 		case 5:
 		mat1.mul();
 		break;
-		case 6:
-		mat1.saddle();
-		break;
 	}
 	cout<<"\ndo you want to continue?(y/n): ";
 	cin>>con;
@@ -271,7 +228,7 @@ int main()
 	}
 	else if(x==2){
 	do{
-cout<<"\nFor float operations\n\n1.getdata\n2.addition\n3.subtraction\n4.transpose\n5.multiplication\n6.saddle point\n";
+cout<<"\nFor float operations\n\n1.getdata\n2.addition\n3.subtraction\n4.transpose\n5.multiplication\n";
 	cin>>ch2;
 	switch(ch2)
 	{
@@ -290,9 +247,6 @@ cout<<"\nFor float operations\n\n1.getdata\n2.addition\n3.subtraction\n4.transpo
 		break;
 		case 5:
 		mat2.mul();
-		break;
-		case 6:
-		mat2.saddle();
 		break;
 	}
 	cout<<"\ndo you want to continue?(y/n): ";
