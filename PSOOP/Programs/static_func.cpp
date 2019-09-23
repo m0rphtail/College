@@ -15,3 +15,4 @@ func(1000);
 cout<<count;
 return 0;
 }
+//Kshitij Chitnis

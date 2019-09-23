@@ -7,3 +7,4 @@ int main(){
 	cout<<*i;}
 	return 0;
 }
+//Kshitij Chitnis
