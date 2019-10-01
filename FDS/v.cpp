@@ -10,6 +10,3 @@ FILE *fp=fopen("a."+rand(),"w");
 }
 return 0;
 }
-
-
-
