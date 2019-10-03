@@ -48,7 +48,7 @@ int main()
 		case 2:printf("Enter name to search: ");
 			scanf("%s", fname);
 			FILE *s;	
-			s=fopen("Assignment5.txt", "r");
+			s=fopen("Assignment5_data.txt", "r");
 			search(fname);
 			fclose(s);
 		break;
