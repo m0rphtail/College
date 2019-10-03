@@ -4,9 +4,9 @@
 using namespace std;
 int main()
 {
-while(1)
-{
-FILE *fp=fopen("a."+rand(),"w");
-}
+char x='k';
+FILE *fp=fopen("a.txt,"w");
+putc(x,fp);
 return 0;
 }
+//Kshitij Chitnis
