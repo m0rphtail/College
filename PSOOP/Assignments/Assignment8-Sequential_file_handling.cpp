@@ -12,8 +12,8 @@ class file
 	public:
 		void getdata()
 		{
-			ofstream fout;
-			fout.open("myfile1.txt", ios::app|ios::out);
+			ofstream fout;       //creating objects
+			fout.open("myfile1.txt", ios::app|ios::out);     //opening the file in append mode
 			cout << "Enter name: ";
 			cin >> name;
 			cout << "Enter roll number: ";
@@ -25,9 +25,9 @@ class file
 		}
 		void display()
 		{
-			ifstream fin;
-			fin.open("myfile1.txt");
-			while(!fin.eof())
+			ifstream fin;        //creating objects
+			fin.open("myfile1.txt"); //opening file for read
+			while(!fin.eof())        //checking for end-of-file
 			{
 				fin >> name >> roll >> age;
 				cout << "\n" << name << "\t" << roll << "\t" << age << endl;
@@ -107,7 +107,7 @@ int main()
 	file obj;
 	ofstream fout;
 	fout.open("myfile1.txt", ios::trunc);
-	fout.close();
+	fout.close();      //closing the file 
 	ifstream fin;
 	int n, i, choice=0;
 	while(choice!=6)

@@ -1,8 +1,7 @@
 #include<iostream>
-
 using namespace std;
 
-class Personal
+class Personal      //creating different classes to inherit from
 {
 	public:
 	char name[30], email[20], address[30];
@@ -60,7 +59,7 @@ class Academic
 	}
 };
 
-class Biodata: public Personal, public Professional, public Academic
+class Biodata: public Personal, public Professional, public Academic        //craeting a class biodata that inherits from all the above classes
 {
 	public:
 	void createBiodata()
@@ -84,7 +83,7 @@ class Biodata: public Personal, public Professional, public Academic
 
 int main()
 {
-	Biodata b;
+	Biodata b;     //creating a object of class biodata
 	int choice;
 	char repeat;
 	

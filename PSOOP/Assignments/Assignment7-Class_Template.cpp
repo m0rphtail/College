@@ -1,7 +1,7 @@
 #include<iostream>
 using namespace std;
-template<class t>
-class matrix
+template<class t>       //define a template t
+class matrix            //creating a class matrix
 {
 	t a[10][10],b[10][10];
 	int i,j,n1,m1,n2,m2;
@@ -15,7 +15,7 @@ class matrix
 		void saddle();
 };
 
-template<class t>
+template<class t>       //using the class template for all the function declarations
 void matrix<t>::getdata()
 {
 	cout<<"\nenter no of rows of first matrix\n";
@@ -194,8 +194,8 @@ int main()
 {
 	int x,ch1,ch2;
 	char con;
-	matrix<int> mat1;
-	matrix<float> mat2;
+	matrix<int> mat1;      //making the template use int data type
+	matrix<float> mat2;    //making the template use float data type
 	a:
 	cout<<"\nDo you want integer or float?\n1) Integer\n2) Float\n Enter choice: ";
 	cin>>x;
@@ -258,7 +258,6 @@ cout<<"\nFor float operations\n\n1.getdata\n2.addition\n3.subtraction\n4.transpo
 	cout<<"\nEnter correct option!\n";
 	goto a;
 	}
-	
 	return 0;
 }
 

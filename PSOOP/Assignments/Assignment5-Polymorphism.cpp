@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class shape
+class shape     //declaring the class structure
 {
 	protected:
 	float side1, side2;
@@ -12,22 +12,22 @@ class shape
 		cout << "Enter sides: ";
 		cin >> side1 >> side2;
 	}
-	virtual void compute_area()=0;
+	virtual void compute_area()=0;     //creating a virtual function 
 };
 
-class triangle: public shape
+class triangle: public shape        //inheriting triangle class from shape class
 {
 	public:
-	void compute_area()
+	void compute_area()        //declaring the virtual function
 	{
 		cout << "\nThe area of the triangle is " << 0.5*side1*side2;
 	}
 };
 
-class rectangle: public shape
+class rectangle: public shape       //inheriting rectangle class from shape class
 {
 	public:
-	void compute_area()
+	void compute_area()        //declaring the virtual function
 	{
 		cout << "\nThe area of the rectangle is " << side1*side2;
 	}
@@ -35,7 +35,7 @@ class rectangle: public shape
 
 int main()
 {
-	shape *S;
+	shape *S;      //creating objects of the classes
 	triangle T;
 	rectangle R;
 	int choice;
@@ -48,9 +48,9 @@ int main()
 		{
 			case 1:
 				{
-					S=&T;
-					S->accept();
-					S->compute_area();
+					S=&T;                  //pointing to the respective class 
+					S->accept();           //getting the user input
+					S->compute_area();     //calling the virtual function
 					break;
 				}
 			case 2:

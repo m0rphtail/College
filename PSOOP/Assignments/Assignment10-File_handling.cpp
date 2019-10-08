@@ -1,7 +1,5 @@
- 
 #include<iostream>
 #include<fstream>
-
 using namespace std;
 
 class myfile
@@ -13,8 +11,8 @@ class myfile
 	char read[100];
 	void writefile()
 	{
-		fstream data;
-		cout << "Enter roll no.: ";
+		fstream data;     //creating object data
+		cout << "Enter roll no.: ";       //getting user input
 		cin >> roll;
 		cin.ignore();
 		cout << "Enter name: ";
@@ -22,18 +20,18 @@ class myfile
 		cout << "Enter percentage: ";
 		cin >> per;
 		
-		data.open("data.txt", ios::out|ios::app);
-		data << "Roll no.: " << roll << endl;
+		data.open("data.txt", ios::out|ios::app);     //opening file in append write mode
+		data << "Roll no.: " << roll << endl;         //entering the user input into the file
 		data << "Name: " << name << endl;
 		data << "Percentage: " << per << endl;
-		data.close();
+		data.close();     //closing the file
 	}
 	void readfile()
 	{
 		fstream data;
-		data.open("data.txt", ios::in);
-		data.seekg(0);
-		while(!data.eof())
+		data.open("data.txt", ios::in);   //opeing the file in read mode
+		data.seekg(0);        //seeking th efile pointer to the start of the file
+		while(!data.eof())    //checking foe the end-of-file
 		{
 			data.getline(read, 100);
 			cout << read << endl;

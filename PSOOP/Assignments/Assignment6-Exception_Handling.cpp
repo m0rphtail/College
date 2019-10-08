@@ -13,13 +13,13 @@ class A
 	}
 	double divide()
 	{
-		try
+		try       //the try block checks for a condition
 		{
 			if(y==0)
-				throw(y);
+				throw(y);       //if the condition if flase, throw block is executed
 			cout << "\nDivision of the entered numbers is " << x/y << endl;
 		}
-		catch(double p)
+		catch(double p)         //if the condition is true, catch block is executed
 		{
 			cout << "\nDivide by zero exception" << endl;
 		}
