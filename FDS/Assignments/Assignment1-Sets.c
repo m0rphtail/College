@@ -23,18 +23,6 @@ int main()
              }
              }
        }
-       
-  /*     printf("\nc array is :");
-        for(i=0;i<l;i++)
-     {
-      printf("\n %d",c[l]);
-                 
-                   }*/
-                   
-                   
-                   
-                   
-      
    printf("\nEnter size of 2nd set: ");
    scanf("%d",&n2);
    printf("\nEnter 2nd set: ");
@@ -80,9 +68,7 @@ int main()
     
      break;
      }}
-   
-  
-    
+     
      return 0;
     
    }
@@ -228,11 +214,4 @@ int main()
                                      { 
                                      printf("\n %d",e[n]);
                                          }
-                              
-                             
                             }
-                          
-                            
-                 
-                                   
-
