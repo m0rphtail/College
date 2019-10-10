@@ -126,4 +126,4 @@ complex operator - (complex a, complex b)	//calculating subtraction
 	diff.real = a.real - b.real;
 	diff.imaginary = a.imaginary - b.imaginary;
 	return diff;
-}
+}//Kshitij Chitnis
