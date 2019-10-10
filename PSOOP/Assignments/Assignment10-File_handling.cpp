@@ -1,79 +1,57 @@
 #include<iostream>
 #include<fstream>
 using namespace std;
-
-class myfile
+class employee
 {
+	private:
+		int id;
+		char name[25],designation[25];
+		float salary;
 	public:
-	int roll;
-	char name[30];
-	float per;
-	char read[100];
-	void writefile()
-	{
-		fstream data;     //creating object data
-		cout << "Enter roll no.: ";       //getting user input
-		cin >> roll;
-		cin.ignore();
-		cout << "Enter name: ";
-		cin.getline(name, 30);
-		cout << "Enter percentage: ";
-		cin >> per;
-		
-		data.open("data.txt", ios::out|ios::app);     //opening file in append write mode
-		data << "Roll no.: " << roll << endl;         //entering the user input into the file
-		data << "Name: " << name << endl;
-		data << "Percentage: " << per << endl;
-		data.close();     //closing the file
-	}
-	void readfile()
-	{
-		fstream data;
-		data.open("data.txt", ios::in);   //opeing the file in read mode
-		data.seekg(0);        //seeking th efile pointer to the start of the file
-		while(!data.eof())    //checking foe the end-of-file
-		{
-			data.getline(read, 100);
-			cout << read << endl;
-		}
-		data.close();
-	}
+		void getdata();
+		void putdata();
 };
-
-int main()
-{
-	myfile f;
-	int choice;
-	char repeat;
-	
-	do
+	void employee::getdata()
 	{
-		cout << "\n1. Write Data\n2. Read Data\nEnter your choice: ";
-		cin >> choice;
-		
-		switch(choice)
-		{
-			case 1:
-			{
-				f.writefile();
-				break;
-			}
-			case 2:
-			{
-				f.readfile();
-				break;
-			}
-			default:
-			{
-				cout << "\nInvalid input!";
-				break;
-			}
-		};
-		
-		cout << "\nDo you want to perform another operation? (y/n)";
-		cin >> repeat;
+		cout<<"\nEnter name of employee";
+		cin>>name;
+		cout<<"\nEnter Employee id";
+		cin>>id;
+		cout<<"\nEnter designation of employee";
+		cin>>designation;
+		cout<<"\nEnter salary of employee";
+		cin>>salary;
 	}
-	while(repeat=='y' || repeat=='Y');
-	
-	return 0;
-}//Kshitij Chitnis
+	void employee::putdata()
+	{
+		cout<<"\nName:\t"<<name;
+		cout<<"\nEmployee_Id:\t"<<id;
+		cout<<"\nDesignation:\t"<<designation;
+		cout<<"\nSalary:\t"<<salary;
+	}
+	int main()
+	{
+		int i,n;
+		employee e[10];
+		cout<<"Enter number of employees";
+		cin>>n;
+		fstream fobj;
+		fobj.open("employee.txt",ios::binary|ios::out);
+		for(i=0;i<n;i++)
+		{
+			e[i].getdata();
+			fobj.write((char*)&e[i],sizeof(e[i]));
+		}
+		fobj.close();
+		fobj.seekg(0);
+		cout<<"\nRead from the file";
+		fobj.open("employee.txt",ios::in|ios::out);
+		for(i=0;i<n;i++)
+		{
+			e[i].putdata();
+			fobj.read((char*)&e[i],sizeof(e[i]));
+		}
+		fobj.close();	
+		return 0;
+	}
+//Kshitij Chitnis
