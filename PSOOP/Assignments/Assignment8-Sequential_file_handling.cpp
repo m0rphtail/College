@@ -37,15 +37,15 @@ class file
 		{
 			ifstream fin;
 			ofstream nik;
-			char name1[20];
+			int roll1;
 			fin.open("myfile1.txt");
 			nik.open("mfile.txt");
-			cout<<"Enter name to be deleted : ";
-			cin>>name1;
+			cout<<"Enter roll no to be deleted : ";
+			cin>>roll1;
 			while(!fin.eof())
 			{
 				fin>>name>>roll>>age;
-				if((strcmp(name,name1))!=0)
+				if(roll!=roll1)
 				nik<<name<<endl<<roll<<endl<<age;
 			}
 			fin.close();
