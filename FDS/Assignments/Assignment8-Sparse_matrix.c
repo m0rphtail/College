@@ -67,7 +67,7 @@ void addition()
 		}
 		printf("\n");
 	}
-	printf("\nElements in the matrix  are:\n ");
+	printf("\nElements in the matrix B are:\n ");
 	for(i=0;i<3;i++)
 	{
 		for(j=0;j<3;j++)
