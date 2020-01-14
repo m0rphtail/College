@@ -32,7 +32,7 @@ void stack :: pop()
 {
 	if(top == NULL)
 	{
-		cout<<"List is empty, just like your life."<<endl;
+		cout<<"Underflow"<<endl;
 		return;
 	}
 	cout<<top->data<<" is removed."<<endl;
