@@ -1,97 +1,124 @@
-// C++ program to evaluate value of a postfix expression 
-#include <iostream> 
-#include <string.h> 
-
+#include <bits/stdc++.h> 
 using namespace std; 
-
-// Stack type 
-struct Stack 
+ 
+int isOperator(char input) 
 { 
-	int top; 
-	unsigned capacity; 
-	int* array; 
-}; 
-
-// Stack Operations 
-struct Stack* createStack( unsigned capacity ) 
-{ 
-	struct Stack* stack = (struct Stack*) malloc(sizeof(struct Stack)); 
-
-	if (!stack) return NULL; 
-
-	stack->top = -1; 
-	stack->capacity = capacity; 
-	stack->array = (int*) malloc(stack->capacity * sizeof(int)); 
-
-	if (!stack->array) return NULL; 
-
-	return stack; 
+	switch (input) { 
+	case '+': 
+		return 1; 
+	case '-': 
+		return 1; 
+	case '*': 
+		return 1; 
+	case '^': 
+		return 1; 
+	case '%': 
+		return 1; 
+	case '/': 
+		return 1; 
+	case '(': 
+		return 1; 
+	} 
+	return 0; 
 } 
 
-int isEmpty(struct Stack* stack) 
+int isOperand(char input) 
 { 
-	return stack->top == -1 ; 
+	if (input >= 65 && input <= 90 
+		|| input >= 97 && input <= 122) 
+		return 1; 
+	return 0; 
 } 
 
-char peek(struct Stack* stack) 
+int inPrec(char input) 
 { 
-	return stack->array[stack->top]; 
+	switch (input) { 
+	case '+': 
+	case '-': 
+		return 2; 
+	case '*': 
+	case '%': 
+	case '/': 
+		return 4; 
+	case '^': 
+		return 5; 
+	case '(': 
+		return 0; 
+	} 
 } 
 
-char pop(struct Stack* stack) 
+int outPrec(char input) 
 { 
-	if (!isEmpty(stack)) 
-		return stack->array[stack->top--] ; 
-	return '$'; 
+	switch (input) { 
+	case '+': 
+	case '-': 
+		return 1; 
+	case '*': 
+	case '%': 
+	case '/': 
+		return 3; 
+	case '^': 
+		return 6; 
+	case '(': 
+		return 100; 
+	} 
 } 
 
-void push(struct Stack* stack, char op) 
+void inToPost(char* input) 
 { 
-	stack->array[++stack->top] = op; 
-} 
+	stack<char> s; 
 
+	int i = 0; 
+	while (input[i] != '\0') { 
 
-// The main function that returns value of a given postfix expression 
-int evaluatePostfix(char* exp) 
-{ 
-	// Create a stack of capacity equal to expression size 
-	struct Stack* stack = createStack(strlen(exp)); 
-	int i; 
+		if (isOperand(input[i])) { 
+			printf("%c", input[i]); 
+		} 
 
-	// See if stack was created successfully 
-	if (!stack) return -1; 
-
-	// Scan all characters one by one 
-	for (i = 0; exp[i]; ++i) 
-	{ 
-		// If the scanned character is an operand (number here), 
-		// push it to the stack. 
-		if (isdigit(exp[i])) 
-			push(stack, exp[i] - '0'); 
-
-		// If the scanned character is an operator, pop two 
-		// elements from stack apply the operator 
-		else
-		{ 
-			int val1 = pop(stack); 
-			int val2 = pop(stack); 
-			switch (exp[i]) 
-			{ 
-			case '+': push(stack, val2 + val1); break; 
-			case '-': push(stack, val2 - val1); break; 
-			case '*': push(stack, val2 * val1); break; 
-			case '/': push(stack, val2/val1); break; 
+		else if (isOperator(input[i])) { 
+			if (s.empty() 
+				|| outPrec(input[i]) > inPrec(s.top())) 
+				s.push(input[i]); 
+			else { 
+				while (!s.empty() 
+					&& outPrec(input[i]) < inPrec(s.top())) { 
+					printf("%c", s.top()); 
+					s.pop(); 
+				} 
+				s.push(input[i]); 
 			} 
 		} 
+
+		else if (input[i] == ')') { 
+			while (s.top() != '(') { 
+				printf("%c", s.top()); 
+				s.pop(); 
+
+				if (s.empty()) { 
+					printf("Wrong input\n"); 
+					exit(1); 
+				} 
+			} 
+
+			s.pop(); 
+		} 
+		i++; 
 	} 
-	return pop(stack); 
+
+	while (!s.empty()) { 
+		if (s.top() == '(') { 
+			printf("\n Wrong input\n"); 
+			exit(1); 
+		} 
+		printf("%c", s.top()); 
+		s.pop(); 
+	} 
 } 
 
-// Driver program to test above functions 
 int main() 
 { 
-	char exp[] = "231*+9-"; 
-	cout<<"postfix evaluation: "<< evaluatePostfix(exp); 
+	char input[] = "(A+B*(C-D))"; 
+	inToPost(input); 
 	return 0; 
 } 
 
