@@ -42,7 +42,7 @@ int inPrec(char input)
 		return 4; 
 	case '^': 
 		return 5; 
-	case '(': 
+	case '(':
 		return 0; 
 	} 
 } 
@@ -117,8 +117,12 @@ void inToPost(char* input)
 
 int main() 
 { 
-	char input[] = "(A+B*(C-D))"; 
+	char input[50]; 
+	cout<<"Enter Expression:";
+	cin.getline(input,50);
+	cout<<"PostFix Expression: ";
 	inToPost(input); 
+	cout<<"\n";
 	return 0; 
 } 
 
