@@ -15,37 +15,9 @@ void myInit(void)
 void myDisplay(void)
 { 
     glClear(GL_COLOR_BUFFER_BIT); 
-    
-    glBegin(GL_LINE_LOOP);	//shell
-	glVertex2i(40, 40);
-	glVertex2i(40, 90);
-	glVertex2i(70, 120);
-	glVertex2i(100, 90);
-	glVertex2i(100, 40);
-	glEnd();
+  
 
-	glBegin(GL_LINE_STRIP);		//chimney
-	glVertex2i(50, 100);
-	glVertex2i(50, 120);
-	glVertex2i(60, 120);
-	glVertex2i(60, 110);
-	glEnd(); 
-    
-	glBegin(GL_LINE_STRIP);		//door
-	glVertex2i(55, 40);
-	glVertex2i(55, 70);
-	glVertex2i(65, 70);
-	glVertex2i(65, 40);
-	glEnd();
-	
-	glBegin(GL_LINE_LOOP);		//window
-	glVertex2i(80, 65);
-	glVertex2i(80, 80);
-	glVertex2i(95, 80);
-	glVertex2i(95, 65);
-	glEnd();
-	glFlush(); 
-} 
+
 
 int main(int argc,char **argv)
 {

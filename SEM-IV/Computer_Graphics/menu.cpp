@@ -9,9 +9,6 @@ using namespace std;
 void DDAline(float x0, float y0, float x1, float y1);
 void plot(float x, float y);
 int abs(float n);
-void drawPolygon();
-
-int a[30][3], k=0, c;
 
 void myInit()
 {
@@ -23,6 +20,8 @@ void myInit()
 	glLoadIdentity();
 	gluOrtho2D(0, w, 0, h);
 }
+
+int a[30][3], k=0, c;
 
 void myDisplay()
 {
@@ -84,14 +83,7 @@ void menu(int item)
 	{
 		glColor3f(1.0, 0.0, 0.0);
 	}
-	if(item==3)
-	{
-		glColor3f(0.0, 1.0, 0.0);
-	}
-	if(item==4)
-	{
-		glColor3f(0.0, 0.0, 1.0);
-	}
+	
 }
 
 void mouseClick(int button, int state, int x, int y)
@@ -110,28 +102,9 @@ void mouseClick(int button, int state, int x, int y)
 			glFlush();
 		}
 
-		if(button==GLUT_RIGHT_BUTTON)
-		{
-			glBegin(GL_LINE_LOOP);
-			for(int i=0;i<k;i++)
-			{
-				glVertex2f(a[i][0],a[i][1]);
-			}
-			glEnd();
-			k=0;
-			glFlush();
-		}
+		
 	}
 }
-
-/*void drawPolygon()
-{
-	int i;
-	for(i=0;i<k;i=i+2)
-	{
-		DDAline(a[i][0], a[i][1], a[i+1][0], a[i+1][1]);
-	}
-}*/
 
 int main(int argc, char **argv)
 {
@@ -146,8 +119,6 @@ int main(int argc, char **argv)
 	glutCreateMenu(menu);
 	glutAddMenuEntry("Black", 1);
 	glutAddMenuEntry("Red", 2);
-	glutAddMenuEntry("Green", 3);
-	glutAddMenuEntry("Blue", 4);
 	glutAttachMenu(GLUT_MIDDLE_BUTTON);
 	glutMainLoop();
 	return 0;
