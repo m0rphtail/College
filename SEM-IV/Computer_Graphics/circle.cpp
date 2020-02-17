@@ -113,6 +113,20 @@ void olympic(float r,float h,int k)
 	}
 }
 
+void audi(float r,float h,int k)
+{
+	int i;
+	float x;
+	for(i=0;i<4;i++)
+	{
+		simplecircle(r,h,k);
+		x=1.5*r;
+		h=h+x;
+	}
+	h=h-(1.5*x);
+	k=k-x;
+}
+
 void concentric(float r,float h,int k)
 {
 	int n;
@@ -140,8 +154,8 @@ void pattern(int r,int h, int k)
 
 void spiral(int h,int k)
 {
-	int x,y,r,d;
-	put_pixel(h,k);
+ 	int x,y,r,d;
+ 	put_pixel(h,k);
 	for(r=0;r<=200;r+=25)
 	{
 		x=0;
@@ -184,7 +198,7 @@ void myDisplay(void)
 {
 		glClear(GL_COLOR_BUFFER_BIT);
 		glColor3f(0.90f,1.0f,0.40f);
-		glPointSize(2.0);
+		glPointSize(4.0);
 		for(int i=-w;i<=w;i+=2)
 		{
 			setpixel(i,0);
@@ -242,6 +256,16 @@ void menu(int item)
 		cin>>h>>k;
 		pattern(r,h,k);
 	}
+	if(item==7)
+	{
+		int r,h,k;
+		cout<<"\nEnter the radius: ";
+		cin>>r;
+		cout<<"\nEnter the co-ordinates of the center: ";
+		cin>>h>>k;
+		audi(r,h,k);
+
+	}
 	if(item==6)
 	{
 		exit(0);
@@ -267,6 +291,7 @@ int main(int argc,char** argv)
 		glutCreateMenu(menu);
 		glutAddMenuEntry("Simple Circle",1);
 		glutAddMenuEntry("Olympic Rings",2);
+		glutAddMenuEntry("Audi Logo",7);		
 		glutAddMenuEntry("Concentric Circles",3);
 		glutAddMenuEntry("Spiral",4);
 		glutAddMenuEntry("Pattern",5);

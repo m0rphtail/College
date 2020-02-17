@@ -6,7 +6,6 @@ void dline(float x1,float y1,float x2,float y2);
 void DDAdash(float x0, float y0, float x1, float y1);
 void plot(float x, float y);
 int sign(int );
-
 # define w 640
 # define h 480 
 void myInit(void)
