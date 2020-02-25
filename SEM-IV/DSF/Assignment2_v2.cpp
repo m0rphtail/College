@@ -54,9 +54,9 @@ class generalQueue /*class to create a priority queue*/
 
 int main()
 {
-    seriousQueue patient;
-    moderateQueue patient;
-    generalQueue patient;
+    seriousQueue spatient;
+    moderateQueue mpatient;
+    generalQueue gpatient;
 
     int choice;
 
@@ -173,6 +173,8 @@ void priorityQueue::enqueue() /*function to admit a patient (add to queue)*/
     cin.getline(patient->name, 30);
     cout << "\n1. Serious\n2. Moderate\n3. General\nSelect the condition: ";
     cin >> patient->priority;
+
+
 
     if(rear==NULL) /*check if queue is empty*/
     {
