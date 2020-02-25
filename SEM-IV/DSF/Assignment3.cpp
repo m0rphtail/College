@@ -19,7 +19,7 @@ using namespace std;
 class node
 {
 	public:
-	int data;
+	char data;
 	node *left, *right;
 	node();
 };

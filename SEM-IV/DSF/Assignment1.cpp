@@ -67,12 +67,19 @@ int main()
 				else
 				{
 					cout << "\nPostfix expression: " << postfix << endl;
-					cout << "\nDo you want to evaluate postfix expression?\n";
+					a: cout << "\nDo you want to evaluate postfix expression? (y/n):\n";
 					cin >> check;
 					if(check=='y' || check=='Y')
 					{
 						result=expression.evaluatePostfix(postfix);
-						cout << "\nValue of the expression is " << result << endl;
+						cout << "\nValue of the expression is: " << result << endl;
+					}
+					else if(check=='n' || check=='N')
+						break;
+					else
+					{
+						cout<<"\nEnter correct input!\n";
+						goto a;
 					}
 				}
 				break;

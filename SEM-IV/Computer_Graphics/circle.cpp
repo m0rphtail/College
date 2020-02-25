@@ -143,7 +143,7 @@ void concentric(float r,float h,int k)
 void pattern(int r,int h, int k)
 {
 	simplecircle(r,h,k);
-    glColor3f(0.0f,1.0f,0.0f);
+           glColor3f(0.0f,1.0f,0.0f);
 	DDA(h,k+r,h-(0.866*r),k-(r*0.5));
 	DDA(h-(0.866*r),k-(r*0.5),h+(0.866*r),k-(r*0.5));
 	DDA(h+(0.866*r),k-(r*0.5),h,k+r);
