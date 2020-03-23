@@ -1,6 +1,14 @@
 /*
-// ASSIGNMENT 5
-//
+Kshitij Chitnis
+SE IT 
+8016
+S2 BATCH
+
+ Last edited on: 13/03/2020
+
+   ASSIGNMENT 5
+*/
+/*
 // PROBLEM STATEMENT
 // Implement binary search tree and perform following operations:
 //   a. Insert
