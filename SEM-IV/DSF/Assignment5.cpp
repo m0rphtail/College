@@ -484,3 +484,117 @@ int main()
 	while(choice!=7);
 	return 0;
 }
+
+
+/*
+OUTPUT:
+ ./a.out
+Do you wish to add Node
+1:Yes
+2:No
+Enter choice:1
+Enter data:1  
+Do you wish to add Node
+1:Yes
+2:No
+Enter choice:1
+Enter data:2
+Do you wish to add Node
+1:Yes
+2:No
+Enter choice:1
+Enter data:3
+Do you wish to add Node
+1:Yes
+2:No
+Enter choice:2
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 1
+Enter data to be inserted: 3
+The data already exists!!
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 1
+Enter data to be inserted: 4
+
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 2
+Enter data to be searched: 2
+2 is found in the tree!!
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 3
+Enter data to be deleted: 1
+Data has been deleted!!
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 4
+Preorder traversal:
+	2	3	4	
+Inorder traversal:
+	2	3	4	
+Postorder traversal:
+	4	3	2	
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 5
+Breadth First Traversal of the tree is:
+	2,3,4,
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 6
+Preorder traversal of mirror image:
+	2	3	4	
+Inorder traversal of mirror image:
+	4	3	2	
+Postorder traversal of mirror image:
+	4	3	2	
+1. Insert
+2. Search
+3. Delete
+4. Display
+5. BFT
+6. Mirror Image
+7. Exit
+Enter choice: 7
+
+*/
